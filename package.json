@@ -1,0 +1,19 @@
+{
+  "name": "moneytalks-investment-app",
+  "version": "1.0.0",
+  "description": "MoneyTalks mobile investment app with RT9, Platium, CC Coins, live admin control, and AI assistant.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check public/app.js",
+    "hash-admin": "node scripts/hash-admin-password.js"
+  },
+  "keywords": [
+    "investment",
+    "trading",
+    "cc-coins",
+    "admin-panel",
+    "real-time"
+  ],
+  "license": "UNLICENSED"
+}

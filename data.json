@@ -1,0 +1,215 @@
+{
+  "prices": {
+    "RT9": {
+      "value": 150,
+      "history": [
+        {
+          "value": 125,
+          "at": "2026-06-23T00:00:00.000Z"
+        },
+        {
+          "value": 100,
+          "at": "2026-06-23T08:44:36.286Z"
+        },
+        {
+          "value": 150,
+          "at": "2026-06-23T08:46:56.417Z"
+        },
+        {
+          "value": 150,
+          "at": "2026-06-23T08:46:57.153Z"
+        },
+        {
+          "value": 150,
+          "at": "2026-06-23T08:46:57.692Z"
+        },
+        {
+          "value": 150,
+          "at": "2026-06-23T08:46:57.857Z"
+        }
+      ],
+      "updatedAt": "2026-06-23T08:46:57.857Z"
+    },
+    "PLATIUM": {
+      "value": 452,
+      "history": [
+        {
+          "value": 42,
+          "at": "2026-06-23T00:00:00.000Z"
+        },
+        {
+          "value": 42,
+          "at": "2026-06-23T08:44:36.286Z"
+        },
+        {
+          "value": 452,
+          "at": "2026-06-23T08:46:56.417Z"
+        },
+        {
+          "value": 452,
+          "at": "2026-06-23T08:46:57.153Z"
+        },
+        {
+          "value": 452,
+          "at": "2026-06-23T08:46:57.692Z"
+        },
+        {
+          "value": 452,
+          "at": "2026-06-23T08:46:57.857Z"
+        }
+      ],
+      "updatedAt": "2026-06-23T08:46:57.857Z"
+    }
+  },
+  "users": [
+    {
+      "id": "usr_c7cd0396efcac163c0cf2280",
+      "fullName": "rohit",
+      "mobile": "9907314224",
+      "address": "ranaghat",
+      "pincode": "741202",
+      "username": "___itz__mikey_____",
+      "passwordHash": "f856537df2cc2b018f3cf912640464f3c98b8d98a3b3dca177f4e92a9f6af675fb9cba3beb42e41c730c8673aaaddd117bb95333488916294f61efbfd32c90c0",
+      "passwordSalt": "018b9fc638f83c98ef985322fdabb59c",
+      "role": "user",
+      "status": "active",
+      "ccBalance": 0,
+      "holdings": {
+        "RT9": {
+          "quantity": 0,
+          "avgCost": 0
+        },
+        "PLATIUM": {
+          "quantity": 0,
+          "avgCost": 0
+        }
+      },
+      "createdAt": "2026-06-23T08:42:46.303Z",
+      "updatedAt": "2026-06-23T08:47:29.153Z"
+    }
+  ],
+  "coinRequests": [
+    {
+      "id": "req_a6760e2cd89602f376060410",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "mobile": "9907314224",
+      "amount": 1000,
+      "status": "approved",
+      "createdAt": "2026-06-23T08:43:37.693Z",
+      "resolvedAt": "2026-06-23T08:44:22.718Z"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "txn_95a2aef9f99ac06cc5f3b1a6",
+      "createdAt": "2026-06-23T08:42:46.303Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "type": "account",
+      "action": "registered",
+      "total": 0
+    },
+    {
+      "id": "txn_1f0d1e4830a4f849a4cad337",
+      "createdAt": "2026-06-23T08:44:22.718Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "type": "wallet",
+      "action": "coin_request_approved",
+      "total": 1000
+    },
+    {
+      "id": "txn_12ae68d830146f11a75a91d0",
+      "createdAt": "2026-06-23T08:44:51.678Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "mobile": "9907314224",
+      "type": "trade",
+      "symbol": "RT9",
+      "assetName": "RT9",
+      "action": "buy",
+      "quantity": 5,
+      "price": 100,
+      "total": 500
+    },
+    {
+      "id": "txn_ea009f6a54ad8b5f59ce8613",
+      "createdAt": "2026-06-23T08:44:53.365Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "mobile": "9907314224",
+      "type": "trade",
+      "symbol": "RT9",
+      "assetName": "RT9",
+      "action": "buy",
+      "quantity": 5,
+      "price": 100,
+      "total": 500
+    },
+    {
+      "id": "txn_3eca8aae83440ee505e235aa",
+      "createdAt": "2026-06-23T08:46:22.412Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "type": "wallet",
+      "action": "admin_add_coins",
+      "total": 1000
+    },
+    {
+      "id": "txn_c293cc57c30a48d223f4f491",
+      "createdAt": "2026-06-23T08:46:23.725Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "type": "wallet",
+      "action": "admin_remove_coins",
+      "total": 1000
+    },
+    {
+      "id": "txn_e750238d0e9cc1827f157196",
+      "createdAt": "2026-06-23T08:47:10.842Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "mobile": "9907314224",
+      "type": "trade",
+      "symbol": "RT9",
+      "assetName": "RT9",
+      "action": "sell",
+      "quantity": 5,
+      "price": 150,
+      "total": 750
+    },
+    {
+      "id": "txn_3d872e8cdde6912cd0737706",
+      "createdAt": "2026-06-23T08:47:11.509Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "mobile": "9907314224",
+      "type": "trade",
+      "symbol": "RT9",
+      "assetName": "RT9",
+      "action": "sell",
+      "quantity": 5,
+      "price": 150,
+      "total": 750
+    },
+    {
+      "id": "txn_8f80ccd1f5eb551e9c25219e",
+      "createdAt": "2026-06-23T08:47:23.963Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "type": "wallet",
+      "action": "admin_remove_coins",
+      "total": 1000
+    },
+    {
+      "id": "txn_093092bf180f8093384a673e",
+      "createdAt": "2026-06-23T08:47:29.153Z",
+      "userId": "usr_c7cd0396efcac163c0cf2280",
+      "userName": "rohit",
+      "type": "wallet",
+      "action": "admin_remove_coins",
+      "total": 500
+    }
+  ]
+}
