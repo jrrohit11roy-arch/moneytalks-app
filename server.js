@@ -201,7 +201,7 @@ function requireUser(req, res) {
 }
 
 function requireAdmin(req, res) {
-  if (!isAdmin(req)) {
+  console.log(process.env.ADMINPASSWORD);if (!isAdmin(req)) {
     sendJson(res, 401, { error: "Admin access is locked. Configure ADMIN_PASSWORD or ADMIN_PASSWORD_HASH." });
     return false;
   }
