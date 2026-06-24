@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoneyTalks</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">MoneyTalks</p>
+          <h1>Investment control room</h1>
+          <p>Trade RT9, invest in Platium, request CC Coins, and get AI guidance from one live mobile dashboard.</p>
+        </div>
+        <button id="themeToggle" class="icon-button" type="button" title="Toggle dark and light mode">◐</button>
+      </header>
+
+      <nav class="top-tabs" aria-label="MoneyTalks sections">
+        <button class="tab active" data-view="authView">User App</button>
+        <button class="tab" data-view="adminView">Admin Panel</button>
+      </nav>
+
+      <section id="message" class="message hidden"></section>
+
+      <section id="authView" class="view active">
+        <section id="authPanel" class="auth-grid">
+          <form id="loginForm" class="panel form">
+            <h2>Login</h2>
+            <label>Username <input id="loginUsername" autocomplete="username" required /></label>
+            <label>Password <input id="loginPassword" type="password" autocomplete="current-password" required /></label>
+            <button class="primary" type="submit">Open Account</button>
+          </form>
+
+          <form id="registerForm" class="panel form">
+            <h2>Create account</h2>
+            <label>Full Name <input id="fullName" autocomplete="name" required /></label>
+            <label>Mobile Number <input id="mobile" inputmode="numeric" maxlength="10" required /></label>
+            <label>Address <input id="address" autocomplete="street-address" required /></label>
+            <label>Pincode <input id="pincode" inputmode="numeric" maxlength="6" required /></label>
+            <label>Username <input id="username" autocomplete="username" required /></label>
+            <label>Password <input id="password" type="password" autocomplete="new-password" minlength="8" required /></label>
+            <button class="secondary" type="submit">Register</button>
+          </form>
+        </section>
+
+        <section id="appPanel" class="hidden">
+          <section class="phone-frame">
+            <div class="portfolio-hero">
+              <div>
+                <span class="live-dot"></span>
+                <small id="liveStatus">Live market connected</small>
+                <h2 id="portfolioValue">CC 0</h2>
+                <p id="profileLine">Portfolio value</p>
+              </div>
+              <button id="userLogout" class="ghost" type="button">Logout</button>
+            </div>
+
+            <nav class="mobile-nav" aria-label="Dashboard sections">
+              <button class="active" data-section="dashboardSection">Dashboard</button>
+              <button data-section="tradeSection">RT9</button>
+              <button data-section="platiumSection">Platium</button>
+              <button data-section="walletSection">Wallet</button>
+              <button data-section="assistantSection">AI</button>
+              <button data-section="profileSection">Profile</button>
+            </nav>
+
+            <section id="dashboardSection" class="mobile-section active">
+              <div class="stat-grid">
+                <article><small>CC Wallet</small><strong id="ccBalance">0</strong></article>
+                <article><small>RT9 Shares</small><strong id="rt9Qty">0</strong></article>
+                <article><small>Platium</small><strong id="platiumQty">0</strong></article>
+                <article><small>Total P/L</small><strong id="totalPl">CC 0</strong></article>
+              </div>
+              <div class="asset-grid">
+                <article class="asset-card" data-symbol="RT9">
+                  <div><small>Tradable share</small><h3>RT9</h3></div>
+                  <strong id="rt9Price">CC 0</strong>
+                  <canvas id="rt9Chart" width="360" height="120"></canvas>
+                </article>
+                <article class="asset-card platium" data-symbol="PLATIUM">
+                  <div><small>Digital asset</small><h3>Platium</h3></div>
+                  <strong id="platiumPrice">CC 0</strong>
+                  <canvas id="platiumChart" width="360" height="120"></canvas>
+                </article>
+              </div>
+            </section>
+
+            <section id="tradeSection" class="mobile-section">
+              <form class="panel form trade-form" data-symbol="RT9">
+                <h2>RT9 Trading</h2>
+                <div class="quote-line"><span>Live Price</span><strong id="rt9TradePrice">CC 0</strong></div>
+                <div class="quote-line"><span>Holdings</span><strong id="rt9Holding">0 shares</strong></div>
+                <div class="quote-line"><span>Profit / Loss</span><strong id="rt9Pl">CC 0</strong></div>
+                <label>Quantity <input id="rt9OrderQty" type="number" min="1" value="1" required /></label>
+                <div class="segmented">
+                  <button type="submit" data-action="buy" class="primary">Buy RT9</button>
+                  <button type="submit" data-action="sell" class="danger">Sell RT9</button>
+                </div>
+              </form>
+            </section>
+
+            <section id="platiumSection" class="mobile-section">
+              <form class="panel form trade-form" data-symbol="PLATIUM">
+                <h2>Platium Investment</h2>
+                <div class="quote-line"><span>Live Price</span><strong id="platiumTradePrice">CC 0</strong></div>
+                <div class="quote-line"><span>Holdings</span><strong id="platiumHolding">0 Platium</strong></div>
+                <div class="quote-line"><span>Profit / Loss</span><strong id="platiumPl">CC 0</strong></div>
+                <label>Quantity <input id="platiumOrderQty" type="number" min="1" value="1" required /></label>
+                <div class="segmented">
+                  <button type="submit" data-action="buy" class="primary">Buy Platium</button>
+                  <button type="submit" data-action="sell" class="danger">Sell Platium</button>
+                </div>
+              </form>
+            </section>
+
+            <section id="walletSection" class="mobile-section">
+              <form id="coinForm" class="panel form">
+                <h2>Ask Coins</h2>
+                <label>Required CC Coins <input id="coinAmount" type="number" min="1" max="1000000" value="1000" required /></label>
+                <button class="secondary" type="submit">Send Request</button>
+              </form>
+              <section class="panel">
+                <h2>Transaction History</h2>
+                <div id="userTransactions" class="list"></div>
+              </section>
+              <section class="panel">
+                <h2>Coin Request Status</h2>
+                <div id="requestList" class="list"></div>
+              </section>
+            </section>
+
+            <section id="assistantSection" class="mobile-section">
+              <section class="panel assistant">
+                <h2>AI Assistant</h2>
+                <div id="assistantChat" class="chat">
+                  <div class="bubble ai">Ask about RT9, Platium, CC Coins, portfolio, or profit/loss.</div>
+                </div>
+                <form id="assistantForm" class="chat-form">
+                  <input id="assistantInput" placeholder="Ask MoneyTalks AI..." required />
+                  <button class="primary" type="submit">Send</button>
+                </form>
+              </section>
+            </section>
+
+            <section id="profileSection" class="mobile-section">
+              <section class="panel">
+                <h2>Profile</h2>
+                <div id="profileDetails" class="profile-list"></div>
+              </section>
+            </section>
+          </section>
+        </section>
+      </section>
+
+      <section id="adminView" class="view">
+        <section id="adminLock" class="panel lock-panel">
+          <div>
+            <h2>Secure Admin Panel</h2>
+            <p class="muted">Use the password from your server environment. No admin password is stored in source code.</p>
+          </div>
+          <form id="adminLoginForm" class="form">
+            <label>Admin Password <input id="adminPassword" type="password" required /></label>
+            <button class="primary" type="submit">Unlock Admin</button>
+          </form>
+        </section>
+
+        <section id="adminPanel" class="hidden">
+          <div class="admin-actions">
+            <input id="userSearch" placeholder="Search users..." />
+            <button id="adminRefresh" class="ghost" type="button">Refresh</button>
+            <button id="adminLogout" class="ghost danger-text" type="button">Lock</button>
+          </div>
+
+          <section class="analytics-grid" id="analyticsGrid"></section>
+
+          <section class="workspace-grid">
+            <form id="priceForm" class="panel form">
+              <h2>Asset Management</h2>
+              <label>RT9 Price <input id="adminRT9" type="number" min="0.01" step="0.01" required /></label>
+              <label>Platium Price <input id="adminPlatium" type="number" min="0.01" step="0.01" required /></label>
+              <button class="primary" type="submit">Update Live Prices</button>
+            </form>
+
+            <form id="manualCoinForm" class="panel form">
+              <h2>Coin Management</h2>
+              <label>User <select id="manualCoinUser"></select></label>
+              <label>Amount <input id="manualCoinAmount" type="number" min="1" value="100" required /></label>
+              <div class="segmented">
+                <button class="secondary" type="submit" data-action="add">Add CC</button>
+                <button class="danger" type="submit" data-action="remove">Remove CC</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="workspace-grid">
+            <section class="panel">
+              <h2>Coin Requests</h2>
+              <div id="adminRequests" class="list"></div>
+            </section>
+            <section class="panel">
+              <h2>Buy / Sell Activity</h2>
+              <div id="adminTransactions" class="table-wrap"></div>
+            </section>
+          </section>
+
+          <section class="panel">
+            <h2>User Management</h2>
+            <div id="adminUsers" class="table-wrap"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
